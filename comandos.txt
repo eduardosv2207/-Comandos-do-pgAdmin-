@@ -25,3 +25,9 @@ CREATE TABLE detalhes_usuario (
 INSERT INTO detalhes_usuario(idusuario, cpf, endereco) VALUES (5, '66666666666', 'casa5')
 
 SELECT * FROM detalhes_usuario
+
+UPDATE detalhes_usuario
+
+SET telefone = '1199999909'
+
+WHERE idusuario = 1
