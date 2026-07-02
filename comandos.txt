@@ -8,3 +8,20 @@ CREATE TABLE nome_da_tabela();
 INSERT INTO nome_da_tabela(atributos_da_tabela) VALUES (valores_da_tabela);
 
 OBS: os valores só podem ser passados com aspas simples('Eduardo')
+
+CREATE TABLE usuario(
+	id serial PRIMARY KEY,
+	nome VARCHAR(150) NOT NULL,
+	email VARCHAR(150) UNIQUE NOT NULL 
+);
+
+CREATE TABLE detalhes_usuario (
+	idUsuario int PRIMARY KEY,
+	cpf VARCHAR(11) UNIQUE NOT NULL,
+	endereco TEXT,
+	CONSTRAINT fk_usuarios FOREIGN KEY(idUsuario) REFERENCES usuario(id) on delete cascade 
+);
+
+INSERT INTO detalhes_usuario(idusuario, cpf, endereco) VALUES (5, '66666666666', 'casa5')
+
+SELECT * FROM detalhes_usuario
